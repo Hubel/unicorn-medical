@@ -21,4 +21,8 @@ export class DashboardItemSoComponent implements OnInit {
     }
     return this.item.up_vote_count - this.item.down_vote_count;
   }
+
+  get body(): string {
+    return this.item?.body?.replace(/<[^>]*>/g, '') || '';
+  }
 }

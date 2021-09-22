@@ -15,7 +15,8 @@ export class SoQuestionsService {
       pagesize: pageSize,
       order: 'desc',
       sort: 'creation',
-      tagged: tags.join(' ')
+      tagged: tags.join(' '),
+      filter: 'withbody'
     });
     if (qustionsResponse?.items && qustionsResponse?.items.length > 0) {
       return qustionsResponse?.items;

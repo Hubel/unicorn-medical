@@ -1,7 +1,30 @@
-<div class="votes">{{votes}}</div>
-<div class="answers">{{item?.answer_count}}</div>
-<div class="views">{{item?.view_count}}</div>
-<div class="title">{{item?.title}}</div>
-<div class="preview">{{item?.body}}</div>
-<div class="tags">{{item?.tags}}</div>
-<div class="user">{{item?.owner?.display_name}}</div>
+<div class="stats-container">
+  <div class="stats">
+    <div class="votes">
+      <div class="count">{{votes}}</div>
+      <div class="label">votes</div>
+    </div>
+    <div class="answers">
+      <div class="count">{{item?.answer_count}}</div>
+      <div class="label">answers</div>
+    </div>
+  </div>
+  <div class="views">{{item?.view_count}} views</div>
+</div>
+
+<div class="summary">
+  <h3 class="title">{{item?.title}}</h3>
+  <div class="excerpt">{{body}}</div>
+  <div class="tags-user">
+    <div class="tags">
+      <ng-template ngFor let-tag [ngForOf]="item?.tags" let-i="index">
+        <div class="tag">{{tag}}</div>
+      </ng-template>
+    </div>
+    <div class="user-container">
+      <div class="user-info">
+        {{item?.owner?.display_name}}
+      </div>
+    </div>
+  </div>
+</div>

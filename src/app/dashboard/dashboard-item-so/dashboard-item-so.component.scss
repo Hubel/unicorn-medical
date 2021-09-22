@@ -1,0 +1,68 @@
+@import 'src/assets/sass/styles';
+
+:host {
+  display: flex;
+  width: 100%;
+  padding: 12px 8px;
+}
+
+.stats-container {
+  margin-right: 16px;
+  width: 58px;
+  float: none;
+  text-align: center;
+
+  .stats {
+    margin: 0;
+    width: 58px;
+
+    .count {
+    }
+    .label {
+    }
+  }
+}
+
+.summary {
+  flex: 1 auto;
+  width: auto;
+  float: none;
+  margin: 0;
+  overflow: hidden;
+  word-wrap: break-word;
+  word-break: break-word;
+
+  .excerpt {
+    padding-bottom: 8px;
+  }
+
+  .tags-user {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    .tags {
+      display: flex;
+      line-height: 18px;
+      float: left;
+      flex-wrap: wrap;
+
+      .tag {
+        background-color: $gray-french;
+        margin-left: 4px;
+        padding: 4px;
+      }
+    }
+
+    .user-container {
+      width: 200px;
+      float: right;
+      line-height: 18px;
+      margin-left: auto;
+      flex-shrink: 0;
+
+      .user-info {
+      }
+    }
+  }
+}
