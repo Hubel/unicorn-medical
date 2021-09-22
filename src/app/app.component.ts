@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { SearchService } from './core/services/search.service';
+import { AuthService } from './core/services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +11,9 @@ import { SearchService } from './core/services/search.service';
 export class AppComponent {
   title = 'app works!';
 
-  constructor(private _searchService: SearchService) {
-
+  constructor(private authService: AuthService,
+              private _searchService: SearchService) {
+    this.authService.init();
   }
 
   triggerService() {

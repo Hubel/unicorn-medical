@@ -2,4 +2,8 @@
   <div class='topbar__inner'>
     <input type='text' placeholder='Suche nach Ärzten'>
   </div>
+  <div class='topbar__inner'>
+    <button (click)="login()" [disabled]="authService.isLoggedIn">Login</button> {{user?.display_name}}
+    <button (click)="logout()" [disabled]="!authService.isLoggedIn">Logout</button>
+  </div>
 </header>
