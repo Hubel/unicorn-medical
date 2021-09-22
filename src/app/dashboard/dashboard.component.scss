@@ -1,0 +1,12 @@
+@import 'src/assets/sass/styles';
+
+.dashboard-containers {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  gap: 15px;
+
+  app-dashboard-container {
+    flex-grow: 1;
+  }
+}

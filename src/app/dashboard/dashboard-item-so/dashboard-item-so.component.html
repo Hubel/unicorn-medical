@@ -13,8 +13,8 @@
 </div>
 
 <div class="summary">
-  <h3 class="title">{{item?.title}}</h3>
-  <div class="excerpt">{{body}}</div>
+  <h3 class="title" [innerHTML]="item?.title"></h3>
+  <div class="excerpt" [innerHTML]="bodyExcerpt"></div>
   <div class="tags-user">
     <div class="tags">
       <ng-template ngFor let-tag [ngForOf]="item?.tags" let-i="index">
@@ -22,8 +22,7 @@
       </ng-template>
     </div>
     <div class="user-container">
-      <div class="user-info">
-        {{item?.owner?.display_name}}
+      <div class="user-info" [innerHTML]="item?.owner?.display_name">
       </div>
     </div>
   </div>

@@ -22,7 +22,12 @@ export class DashboardItemSoComponent implements OnInit {
     return this.item.up_vote_count - this.item.down_vote_count;
   }
 
-  get body(): string {
-    return this.item?.body?.replace(/<[^>]*>/g, '') || '';
+  get bodyExcerpt(): string {
+    const plainText = (this.item?.body?.replace(/<[^>]*>/g, '') || '');
+    let excerpt = plainText.substring(0, 200);
+    if (plainText.length > 200) {
+      excerpt += '...';
+    }
+    return excerpt;
   }
 }
