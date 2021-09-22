@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 
-import { SearchService } from './core/services/search.service';
 import { AuthService } from './core/services/auth.service';
 
 @Component({
@@ -9,17 +8,9 @@ import { AuthService } from './core/services/auth.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app works!';
+  title = 'unicorn-medical';
 
-  constructor(private authService: AuthService,
-              private _searchService: SearchService) {
+  constructor(private authService: AuthService) {
     this.authService.init();
   }
-
-  triggerService() {
-    this._searchService.search('angular2').subscribe((res) => {
-      console.log('API RESULT', res);
-    });
-  }
-
 }

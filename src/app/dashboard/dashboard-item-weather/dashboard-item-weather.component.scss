@@ -1,0 +1,42 @@
+@import 'src/assets/sass/styles';
+
+:host {
+  display: flex;
+  width: 100%;
+  background-color: $white-sand;
+  border: 1px solid $gray-medium;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.wind-container {
+  width: 120px;
+  float: none;
+  text-align: center;
+  margin: auto 10px;
+
+  i {
+    padding: 20px;
+    font-size: 100px;
+    transform: rotateZ(-45deg);
+  }
+}
+
+.temperature-container {
+  flex: 1;
+  align-self: center;
+  text-align: center;
+
+  .temperature {
+    font-size: large;
+    font-weight: bold;
+  }
+}
+
+.datetime-container {
+  flex: 1;
+  align-self: center;
+  text-align: center;
+  font-size: larger;
+  font-weight: bolder;
+}

@@ -1,19 +1,4 @@
-/*
-  {
-    "Datum": "",
-    "Zeit": "",
-    "Temp. A.": "°C",
-    "Temp. 3": "°C",
-    "Feuchte A.": "%",
-    "Luftdruck": "hPa",
-    "Regen": "mm",
-    "Wind": "km/h",
-    "Richtung": "°",
-    "Helligkeit": "h"
-  },
-*/
-
-[
+export const weatherData = [
   {
     "Datum": "01.01.2016",
     "Zeit": "00:00",

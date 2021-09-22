@@ -1,3 +1,6 @@
 <h2>[{{tags?.join(', ')}}]</h2>
 
-<app-dashboard-item-so *ngFor="let question of questions" [item]="question"></app-dashboard-item-so>
+<ng-container *ngFor="let item of countArray(); let i = index">
+  <app-dashboard-item-so [item]="questions[i]"></app-dashboard-item-so>
+  <app-dashboard-item-weather *ngIf="mixInWeather" [item]="weatherData[i]"></app-dashboard-item-weather>
+</ng-container>

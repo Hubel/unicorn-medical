@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { OAuthModule } from 'angular-oauth2-oidc';
 
 import { AppComponent } from './app.component';
-import { SearchService } from './core/services/search.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LayoutModule } from './core/layout/layout.module';
 import { SearchComponent } from './search/search.component';
@@ -14,6 +13,7 @@ import { AuthService } from './core/services/auth.service';
 import { soApiBaseUrl } from './core/services/data/so-connector.service';
 import { DashboardContainerComponent } from './dashboard/dashboard-container/dashboard-container.component';
 import { DashboardItemSoComponent } from './dashboard/dashboard-item-so/dashboard-item-so.component';
+import { DashboardItemWeatherComponent } from './dashboard/dashboard-item-weather/dashboard-item-weather.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,8 @@ import { DashboardItemSoComponent } from './dashboard/dashboard-item-so/dashboar
     DashboardComponent,
     SearchComponent,
     DashboardContainerComponent,
-    DashboardItemSoComponent
+    DashboardItemSoComponent,
+    DashboardItemWeatherComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +37,7 @@ import { DashboardItemSoComponent } from './dashboard/dashboard-item-so/dashboar
       }
     })
   ],
-  providers: [SearchService, AuthService],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
