@@ -12,12 +12,16 @@ import { SearchComponent } from './search/search.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthService } from './core/services/auth.service';
 import { soApiBaseUrl } from './core/services/data/so-connector.service';
+import { DashboardContainerComponent } from './dashboard/dashboard-container/dashboard-container.component';
+import { DashboardItemSoComponent } from './dashboard/dashboard-item-so/dashboard-item-so.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    SearchComponent
+    SearchComponent,
+    DashboardContainerComponent,
+    DashboardItemSoComponent
   ],
   imports: [
     BrowserModule,
