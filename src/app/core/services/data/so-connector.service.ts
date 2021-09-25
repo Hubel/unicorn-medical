@@ -16,6 +16,13 @@ export class SoConnectorService {
   constructor(private httpClient: HttpClient) {
   }
 
+  /**
+   * Performs a GET request at the StackOverflow API using the user's auth token stored in session storage.
+   * Possible improvements:
+   * - Return an observable and allow refetching
+   * @param method
+   * @param params
+   */
   public async get<T>(method: string, params?: SoHttpParams): Promise<SoResponse<T>> {
     const accessToken = sessionStorage.getItem('access_token') || '';
     const response = await this.httpClient.get(`${soApiUrl}/${method}`, {

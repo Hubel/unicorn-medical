@@ -13,6 +13,9 @@ export class DashboardContainerComponent implements OnInit {
 
   @Input() tags?: string[];
   @Input() count?: number;
+  // TODO: I don't really like this 'mixin' approach. It fulfills this simple requirement but it wouldn't allow
+  //  any further adjustment. The container should manage to hold arbitrary items and the order should follow an
+  //  interchangeable strategy.
   @Input() mixInWeather?: boolean = false;
 
   public questions: Question[];
