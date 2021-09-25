@@ -5,8 +5,8 @@ import { SoHttpParams, SoResponse } from './so.types';
 
 
 export const soApiBaseUrl = 'https://api.stackexchange.com';
-const soApiVersion = '2.3';
-const soApiUrl = `${soApiBaseUrl}/${soApiVersion}`;
+export const soApiVersion = '2.3';
+export const soApiUrl = `${soApiBaseUrl}/${soApiVersion}`;
 
 @Injectable({
   providedIn: 'root'
