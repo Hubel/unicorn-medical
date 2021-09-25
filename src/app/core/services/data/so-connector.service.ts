@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { AuthService } from '../auth.service';
 import { SoHttpParams, SoResponse } from './so.types';
 
 
@@ -14,17 +13,17 @@ const soApiUrl = `${soApiBaseUrl}/${soApiVersion}`;
 })
 export class SoConnectorService {
 
-  constructor(private httpClient: HttpClient,
-              private authService: AuthService) {
+  constructor(private httpClient: HttpClient) {
   }
 
   public async get<T>(method: string, params?: SoHttpParams): Promise<SoResponse<T>> {
+    const accessToken = sessionStorage.getItem('access_token') || '';
     const response = await this.httpClient.get(`${soApiUrl}/${method}`, {
       params: {
         ...params,
         site: 'stackoverflow',
         // Actually this should not be necessary by defining 'sendAccessToken' on the OAuthModule but somehow it does not append the token
-        access_token: this.authService.accessToken,
+        access_token: accessToken,
         key: 'vtH3o)*O9kx1VaIcwcSA6A(('
       }
     }).toPromise() as unknown as SoResponse<T>;
